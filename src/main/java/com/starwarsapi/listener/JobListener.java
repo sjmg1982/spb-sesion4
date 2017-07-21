@@ -14,6 +14,5 @@ public class JobListener implements JobExecutionListener {
 
     @Override
     public void afterJob(JobExecution jobExecution) {
-        jobExecution.
     }
 }

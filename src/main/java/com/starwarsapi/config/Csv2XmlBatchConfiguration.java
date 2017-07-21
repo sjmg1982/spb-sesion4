@@ -1,6 +1,7 @@
 package com.starwarsapi.config;
 
 import com.starwarsapi.domain.People;
+import com.starwarsapi.domain.Planet;
 import com.starwarsapi.listener.PeopleStepListener;
 import org.springframework.batch.core.ItemWriteListener;
 import org.springframework.batch.core.Job;
@@ -14,19 +15,20 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
-import org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.xml.StaxEventItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by sjmg on 21/07/17.
  */
 @Configuration
 @EnableBatchProcessing
+@EnableScheduling
 public class Csv2XmlBatchConfiguration {
 
     @Bean
